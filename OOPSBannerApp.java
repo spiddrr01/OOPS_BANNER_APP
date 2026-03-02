@@ -1,28 +1,36 @@
 /**
  * @author Anurag
- * @version 3.0
+ * @version 4.0
  * 
- * UC3: Refactor UC2 to use String.join() instead of + concatenation
+ * UC4: Store banner lines in a String array and use a loop to print them
  * 
  * This implementation demonstrates:
- * - Using String.join() method for efficient string composition
- * - Reduced memory overhead by avoiding intermediate String objects
- * - Better memory management compared to the + operator
- * - Sequential print statements maintained for clarity
+ * - Using String arrays to store multiple banner lines
+ * - Using enhanced for-loops to iterate through the array
+ * - Better modularity and code reusability
+ * - Elimination of repetitive individual print statements
  */
 public class OOPSBannerApp {
     
     /**
      * Main method - the entry point of the application
-     * @param args Command line arguments (not used in UC3)
+     * @param args Command line arguments (not used in UC4)
      */
     public static void main(String[] args) {
-        System.out.println(String.join("", " **** ", "**** ", " *** ", " *** ", " **** "));
-        System.out.println(String.join("", "*    ", "*    *", "*    *", "*    *", "*    *"));
-        System.out.println(String.join("", "*    ", "*    *", "*    *", "*    *", "*   * "));
-        System.out.println(String.join("", "*    ", "*    *", " *** ", " *** ", "*  *  "));
-        System.out.println(String.join("", "*    ", "*    *", "*    *", "*   * ", "* *   "));
-        System.out.println(String.join("", "*    ", "*    *", "*    *", "*    *", "**    "));
-        System.out.println(String.join("", " **** ", "**** ", " *** ", "*    *", "*     "));
+        // Declare and populate array with banner lines
+        String[] bannerLines = new String[7];
+        
+        bannerLines[0] = String.join("", " **** ", "**** ", " *** ", " *** ", " **** ");
+        bannerLines[1] = String.join("", "*    ", "*    *", "*    *", "*    *", "*    *");
+        bannerLines[2] = String.join("", "*    ", "*    *", "*    *", "*    *", "*   * ");
+        bannerLines[3] = String.join("", "*    ", "*    *", " *** ", " *** ", "*  *  ");
+        bannerLines[4] = String.join("", "*    ", "*    *", "*    *", "*   * ", "* *   ");
+        bannerLines[5] = String.join("", "*    ", "*    *", "*    *", "*    *", "**    ");
+        bannerLines[6] = String.join("", " **** ", "**** ", " *** ", "*    *", "*     ");
+        
+        // Use enhanced for-loop to print each line
+        for (String line : bannerLines) {
+            System.out.println(line);
+        }
     }
 }
